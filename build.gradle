@@ -26,6 +26,7 @@ tasks.named('test') {
 }
 
 tasks.named('bootBuildImage') {
+	builder = "projects.registry.vmware.com/springboot/spring-boot-cnb-builder:0.0.2"
 	buildWorkspace {
 		bind {
 			source = System.getProperty('java.io.tmpdir') + "/${rootProject.name}-work"

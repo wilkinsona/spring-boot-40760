@@ -24,3 +24,21 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.named('bootBuildImage') {
+	buildWorkspace {
+		bind {
+			source = System.getProperty('java.io.tmpdir') + "/${rootProject.name}-work"
+		}
+	}
+	buildCache {
+		bind {
+			source = System.getProperty('java.io.tmpdir') + "/${rootProject.name}-build"
+		}
+	}
+	launchCache {
+		bind {
+			source = System.getProperty('java.io.tmpdir') + "/${rootProject.name}-launch"
+		}
+	}
+}

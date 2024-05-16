@@ -26,7 +26,7 @@ tasks.named('test') {
 }
 
 tasks.named('bootBuildImage') {
-	builder = "ghcr.io/wilkinsona/spring-boot-cnb-builder:0.0.3"
+	builder = "ghcr.io/spring-io/spring-boot-cnb-test-builder:0.0.1"
 	buildWorkspace {
 		bind {
 			source = System.getProperty('java.io.tmpdir') + "/${rootProject.name}-work"
